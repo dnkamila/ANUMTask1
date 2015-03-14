@@ -1,0 +1,5 @@
+A = hilb(n)
+b = A*ones(n,1)
+
+=> [L, D] = LDLFact(A)
+=> [L, D, x] = LDLFactFull(A,b)
