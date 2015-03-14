@@ -1,3 +1,3 @@
 # ANUMTask1
 
-LDL' Factorization with diagnal pivoting
+LDL' Factorization with diagonal pivoting
