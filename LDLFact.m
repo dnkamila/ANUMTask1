@@ -1,10 +1,6 @@
 function [L, D] = LDLFact(A)
-    [n,m] = size(A);
-    
-    L = zeros(n,n);
-    for i = 1:n
-        L(i,i) = 1;
-    end
+    [n,n] = size(A);
+    L = eye(n)
     
     D = zeros(n,1);
     for i = 1:n
