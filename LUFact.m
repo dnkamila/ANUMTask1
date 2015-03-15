@@ -1,3 +1,4 @@
+% Algoritma dari tutorial
 function [L, U] = LUFact(A)
     [n,n] = size(A);
     L = eye(n);

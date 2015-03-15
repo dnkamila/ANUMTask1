@@ -1,3 +1,4 @@
+% Algoritma copas dari internet
 function [L, D, x] = LDLFact(A, b)
     % A is a symmetric matrix
     % factor A such that A=LDL^T with
