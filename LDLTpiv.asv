@@ -20,7 +20,7 @@ function [L,D,P] = LDLTpiv(A)
                alfa = i;
            end
         end
-        j = alfa;
+        j = alfa+k-1;
         
         %DiagPivotP
         tmpP = P(k);
@@ -38,19 +38,12 @@ function [L,D,P] = LDLTpiv(A)
         vv = GetCol(v,n,k+1,k);
         
         %A(rows,k) = vv/alfa;
-        v = UpdateCol(v,n,k+1,k,alfa);
+        v = UpdateCol(v,n,k+1,k,alpha);
         
         %A(rows,rows) = A(rows,rows) - vv*vv'/alfa;
-        vv = GetVVT(vv, n);
-        v = UpdateColRow(v, n, k, vv/alfa);
+        v = UpdateColRow(v, n, k, GetVVT(vv)/alfa);
     end
 %     L = tril(A,-1)+eye(n,n);
-    
-    L = v;
     for i = 1:n
-        L((n-i/2)*(i-1)+i) = 1;
-    end
-    
-    for i = 1:n
-        D(i) = v((n-i/2)*(i-1)+i);
-    end
+        
+    D = diag(diag(A));
