@@ -19,7 +19,13 @@ function [L,D,P] = LDLTpiv(A)
         j = alfa+k-1;
         
         P([k j],:) = P([j k],:);
-        A([k j],:) = A([j k],:);
+        
+        %ubah baris
+        %A([k j],:) = A([j k],:);
+        for col = 1:n
+            for row = col:n
+                if 
+
         A(:,[k j]) = A(:,[j k]);
         
         alfa = A(k,k);
