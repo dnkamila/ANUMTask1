@@ -28,6 +28,7 @@ function [L,D,P] = LDLTpiv(A)
         P(j) = tmpP;
         
         %DiagPivotA
+        v = coba(v, k, j, n);
         
         %GetMaxDiagVal
         alfa = v((n-k/2)*(k-1)+k);

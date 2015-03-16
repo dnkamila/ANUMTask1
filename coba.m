@@ -1,6 +1,5 @@
-function v = coba(v, k, j)
+function v = coba(v, k, j, n)
     global u; global w; global y; global x;
-    n=4;
     for t=1:n
         u=k;w=j;y=t;x=t;
         if t==u
