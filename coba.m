@@ -1,20 +1,22 @@
-function e = coba(v, k, j)
-    n=length(v);
+function v = coba(v, k, j)
+    global u; global w; global y; global x;
+    n=4;
     for t=1:n
-        u=k;
-        w=j;
-        x=t;
-        %t jadi baris
-        if t<u
-            u=t;
-            t=k;
+        u=k;w=j;y=t;x=t;
+        if t==u
+            x=w;
         end
-        if t<w
-            w=t;
-            x=j;
+        if t==w
+            w=u;
         end
-        temp=v((n-u/2)*(u-1)+t);
-        v((n-u/2)*(u-1)+t)=v((n-w/2)*(w-1)+x);
+        if y<u
+            u=t;y=k;
+        end
+        if x<w
+            w=t;x=j;
+        end
+        temp=v((n-u/2)*(u-1)+y);
+        v((n-u/2)*(u-1)+y)=v((n-w/2)*(w-1)+x);
         v((n-w/2)*(w-1)+x)=temp;
     end
 end
