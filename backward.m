@@ -1,4 +1,4 @@
-function [x] = backwardOri(U,b)
+function [x] = backward(U,b)
     n = length( b );
     x = zeros( n, 1 );
     
